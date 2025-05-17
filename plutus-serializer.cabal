@@ -1,0 +1,54 @@
+cabal-version:      3.0
+name:               plutus-serializer
+version:            0.1.0.0
+synopsis:           Serialize and write Plutus V2 validator scripts
+description:        A lightweight utility for serializing and saving Plutus V2 scripts to files using Cardano API and Plutus libraries.
+license:            MIT
+license-file:       LICENSE
+author:             Gaurav Raj
+maintainer:         gauravraj50887@gmail.com
+category:           Codec
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+
+
+
+common warnings
+    ghc-options: -Wall
+                 -Wcompat
+                 -Wincomplete-record-updates
+                 -Wpartial-fields
+                 -Wredundant-constraints
+                 -Wincomplete-uni-patterns
+                 -Wmissing-export-lists
+                 -Wpartial-fields
+                 -Wmissing-deriving-strategies
+                 -Wunused-packages
+
+library
+    import:           warnings
+    exposed-modules:   Plutus.Serializer
+    build-depends:     base >=4.14 && <4.15
+                    , filepath
+                    , aeson
+                    , bytestring
+                    , containers
+                    , cardano-api
+                    , data-default
+                    , plutus-ledger-api
+                    , plutus-script-utils
+                    , plutus-tx-plugin
+                    , plutus-tx
+                    , text
+                    , serialise
+                    , plutus-core
+                    , tagged
+                    , prettyprinter
+                    , cardano-api
+                    , directory
+                    , gimbalabs-utils
+
+    hs-source-dirs:    src
+    default-language:  Haskell2010
+
+  
